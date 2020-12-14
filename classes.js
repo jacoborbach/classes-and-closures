@@ -164,6 +164,27 @@ const lion = new ProgressiveManager('Lion', 'Lastname', 'lionL22@gmail.com', 40)
         - The anonymous function should decrease wear_and_tear_count by 10, and set needs_reboot to false
 */
 
-//Code Here
+class Machine {
+  constructor() {
+    this.widgets_made_count = 0;
+    this.wear_and_tear_count = 0;
+    this.needs_reboot = false;
+  }
+  makeWidget(num) {
+    this.widgets_made_count += num;
+    for (let i = num; i >= 50; i -= 50) {
+      this.wear_and_tear_count++;
+    }
+  }
+  fixMachine() {
+    this.needs_reboot = true;
+  }
+  reboot() {
+    return () => {
+      this.wear_and_tear_count -= 10;
+      this.needs_reboot = false;
+    }
+  }
+}
 
 
