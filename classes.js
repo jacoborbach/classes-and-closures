@@ -170,8 +170,9 @@ class Machine {
     this.wear_and_tear_count = 0;
     this.needs_reboot = false;
   }
-  makeWidget(num) {
+  makeWidgets(num) {
     this.widgets_made_count += num;
+    //this.wear_and_tear_count += Math.floor(num / 50);
     for (let i = num; i >= 50; i -= 50) {
       this.wear_and_tear_count++;
     }
