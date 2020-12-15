@@ -95,15 +95,19 @@ count(); // 4
 */
 
 function counterFactory(value) {
-  // Code here.
-
+  let val = value;
   return {
-
+    inc: function () {
+      return ++val;
+    },
+    dec: function () {
+      return --val;
+    }
   };
 }
 
 counter = counterFactory(10);
-// counter.inc() // 11
+//counter.inc() // 11
 // counter.inc() // 12
 // counter.inc() // 13
 // counter.dec() // 12
