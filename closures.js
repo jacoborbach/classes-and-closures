@@ -125,14 +125,14 @@ counter = counterFactory(10);
 function motivation(firstname, lastname) {
   var welcomeText = "You're doing awesome, keep it up";
 
-  // code message function here.
+  function message() {
+    return welcomeText + ' ' + firstname + ' ' + lastname + '.'
+  }
 
-  //Uncommment this to return the value of your message function
-  //return message;
+  return message;
 }
 
 var greeting = motivation('Billy', 'Bob'); // 'You're doing awesome keep it up Billy Bob.
-
 
 
 ////////// PROBLEM 6 //////////
@@ -175,7 +175,14 @@ function secretNumber() {
   var secret = 143;
 
   return {
-    // Code here
+    addToSecret: function (num) {
+      secret += num;
+      return secret;
+    },
+    takeAwayFromSecret: function (num) {
+      secret -= num;
+      return secret;
+    }
   };
 }
 
